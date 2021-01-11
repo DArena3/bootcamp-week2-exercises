@@ -36,3 +36,11 @@ Start by writing all the migrations for your database. Remember, create a new mi
 Once you have written your migrations, use [Casual.js](https://www.npmjs.com/package/casual) to create seed data under `/data`. Remember to also to create a new seed file under `/seeds` using `npx knex seed:make <TABLE_NAME>`. Again, the `users` seed data is already partially completed for your reference.
 
 Depending on the relations you create, you may need to force your seeds to run in a certain order. For example, if you try to insert Post data before User data, an error will be thrown because the foreign User ID key is not yet available. You can order your seeds by prepending the files with numbers (as is done with the users seed).
+
+In the past people have had issues connecting to the database and the solution has been to change the dependency versions to:
+
+"knex": "^0.21.1",
+
+"objection": "^2.1.3",
+
+"pg": "^8.0.3"
