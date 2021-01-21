@@ -5,7 +5,9 @@ casual.define('friend', ({ id: uid1 }, { id: uid2 }) => ({
     id: casual.uuid,
     sender_id: uid1,
     recipient_id: uid2,
-    status: casual.random_element(['sent', 'accepted', 'declined'])
+    status: casual.random_element(['sent', 'accepted', 'declined']),
+    created_at: casual.moment,
+    updated_at: casual.moment,
 }))
 
 const friendData = []
